@@ -1,0 +1,27 @@
+
+
+
+
+class Solution {
+
+    public static int countNodes(Node root) {
+        // Code here
+        if(root==null){
+            return 0;
+        }
+        int count=0;
+        Queue<Node>queue=new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            Node current=queue.poll();
+            count++;
+            if(current.left!=null){
+                queue.offer(current.left);
+            }
+            if(current.right!=null){
+                queue.offer(current.right);
+            }
+        }
+        return count;
+    }
+}
