@@ -1,0 +1,20 @@
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int dec_no=sc.nextInt();
+        
+        dec_to_bin(dec_no);
+    }
+    public static void dec_to_bin(int dec_no){
+        int pow=0;
+        int bin_no=0;
+        while(dec_no>0){
+            int last_digit=dec_no%2;
+            bin_no= bin_no + (last_digit*(int)Math.pow(10,pow));
+            pow++;
+            dec_no=dec_no/2;
+        }
+        System.out.println(bin_no);
+    }
+}
